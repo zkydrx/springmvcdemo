@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="test@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.3">
+    <root id="1"/>
+    <schema id="2" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="icloud"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="web"/>
+    <table id="9" parent="2" name="blog"/>
+    <table id="10" parent="2" name="user">
+      <Comment>user</Comment>
+    </table>
+    <column id="11" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="12" parent="9" name="title">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="13" parent="9" name="content">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="14" parent="9" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="15" parent="9" name="pub_date">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <index id="16" parent="9" name="FK9dyskmk1e1ikvs3dup9rn9tj4">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="17" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="18" parent="9" name="FK9dyskmk1e1ikvs3dup9rn9tj4">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="19" parent="9" name="FK_blog_user">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="20" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="10" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="22" parent="10" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="23" parent="10" name="password">
+      <Position>4</Position>
+      <DataType>varchar(70)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="24" parent="10" name="nick_name">
+      <Position>5</Position>
+      <DataType>varchar(70)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
